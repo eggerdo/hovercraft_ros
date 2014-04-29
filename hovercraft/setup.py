@@ -3,7 +3,7 @@
 from distutils.core import setup
 from catkin_pkg.python_setup import generate_distutils_setup
 
-d = generate_distutils_setup(packages=['hovercraft_node'],
+d = generate_distutils_setup(packages=['hovercraft'],
                              package_dir={'': 'src'})
 
 setup(**d)

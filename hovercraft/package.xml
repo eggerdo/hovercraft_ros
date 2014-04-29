@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>hovercraft_node</name>
+  <name>hovercraft</name>
   <version>0.0.0</version>
   <description>The hovercraft package</description>
 
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/hovercraft_node</url> -->
+  <!-- <url type="website">http://wiki.ros.org/hovercraft</url> -->
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->

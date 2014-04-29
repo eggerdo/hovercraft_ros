@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import roslib; roslib.load_manifest('hovercraft_node')
+import roslib; roslib.load_manifest('hovercraft')
 
 import rospy
 
@@ -8,8 +8,8 @@ import sys
 import math
 
 from geometry_msgs.msg import Twist
-from hovercraft_node.driver import Hovercraft
-from hovercraft_node.msg import HovercraftCommand
+from hovercraft.driver import Hovercraft
+from hovercraft.msg import HovercraftCommand
 
 MAX_SPEED = 1
 MAX_LIFT_THRUST = 50
@@ -17,7 +17,7 @@ MAX_LIFT_THRUST = 50
 class HovercraftNode(object):
 
 	def __init__(self):
-		rospy.init_node('hovercraft_node')
+		rospy.init_node('hovercraft')
 
 		self.hovercraft = Hovercraft()
 
