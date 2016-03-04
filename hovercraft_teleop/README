@@ -1,0 +1,12 @@
+To enable motor control, press R1
+
+Motor Control Button
+
+Elevator: Circle
+Brush: X
+Vacuum: Square
+Pump: Triangle
+
+Pressing the Button toggles the Motor ON / OFF
+
+Motors continue running even if R1 is not pressed. R1 is only needed to toggle.

@@ -1,0 +1,31 @@
+<launch>
+  <!--  smooths inputs from cmd_vel_mux/input/teleop_raw to cmd_vel_mux/input/teleop -->
+  <!-- <arg name="odom_frame" value="$(optenv ODOM_FRAME /odom_combined)" /> -->
+  <arg name="odom_frame" value="$(optenv ODOM_FRAME /odom)" />
+
+<!--   <include file="$(find hovercraft_teleop)/launch/includes/_velocity_smoother.launch" >
+    <arg name="odom_frame" value="$(arg odom_frame)" />
+  </include> -->
+
+  <node pkg="hovercraft_teleop" type="hovercraft_teleop_joy" name="hovercraft_teleop_joystick">
+    <param name="scale_angular" value="1.5"/>
+    <param name="scale_linear_left" value="0.4"/>
+    <param name="scale_linear_right" value="0.4"/>
+    <param name="axis_deadman" value="10"/>
+    <param name="deadman_disabled" value="true"/>
+    <param name="axis_left" value="1"/>
+    <param name="axis_right" value="3"/>
+    <param name="axis_forward" value="13"/>
+    <param name="axis_backward" value="12"/>
+    <param name="axis_take_off" value="8"/>
+    <param name="axis_land" value="10"/>
+    <param name="axis_lift_up" value="11"/>
+    <param name="axis_lift_down" value="9"/>
+    <param name="axis_angular" value="0"/>
+    <remap from="hovercraft_teleop_joystick/cmd_vel" to="cmd_vel"/>
+    <!-- <remap from="hovercraft_teleop_joystick/cmd_vel" to="teleop_velocity_smoother/raw_cmd_vel"/> -->
+  </node>
+
+  <node pkg="joy" type="joy_node" name="joystick"/>
+
+</launch>

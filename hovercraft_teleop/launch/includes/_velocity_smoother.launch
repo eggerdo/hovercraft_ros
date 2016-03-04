@@ -1,0 +1,17 @@
+<!--
+         Velocity smoother for Teleop
+-->
+<launch>
+
+  <arg name="odom_frame" />
+
+  <node pkg="nodelet" type="nodelet" name="teleop_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="teleop_velocity_smoother" args="load yocs_velocity_smoother/VelocitySmootherNodelet /teleop_manager">
+    <rosparam file="$(find hovercraft_bringup)/config/defaults/smoother.yaml" command="load"/>
+    <remap from="teleop_velocity_smoother/smooth_cmd_vel" to="/cmd_vel_mux/input/teleop"/>
+
+    <!-- Robot velocity feedbacks; use the one configured as base default -->
+    <remap from="teleop_velocity_smoother/odometry" to="$(arg odom_frame)"/>
+    <remap from="teleop_velocity_smoother/robot_cmd_vel" to="/cmd_vel"/>
+  </node>
+</launch>

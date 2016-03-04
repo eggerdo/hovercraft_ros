@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- Turtlebot Driver -->
+  <node pkg="hovercraft_node" type="hovercraft_node.py" name="hovercraft" output="screen" respawn="false" launch-prefix="sudo">
+
+  </node>
+
+</launch>
